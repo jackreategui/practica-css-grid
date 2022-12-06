@@ -26,6 +26,7 @@ html{
     display: grid;
     grid-template-columns: minmax(300px, 2fr) 3fr;
     grid-auto-rows: 550px;
+    padding: 0 20px;
 }
 
 .info-hero{
@@ -85,7 +86,7 @@ html{
 
 .dishes-container-grid{
     display: grid;
-    grid-template-columns: repeat(4, minmax(150px, 200px));
+    grid-template-columns: repeat(auto-fit, minmax(75px, 200px));
     justify-content: center;
     grid-auto-rows: 1fr;
     gap: 25px;
@@ -118,13 +119,13 @@ html{
 
 .menu-grid{
     display: grid;
-    grid-template-columns: repeat(5, minmax(100px, 250px));
+    grid-template-columns: repeat(auto-fit, 150px);
     justify-content: center;
     gap: 25px;
 }
 
 .menu-grid-item{
-    background-color: rgba(221, 160, 221, 0.692);
+    background-color: var(--black);
     padding: 15px;
     border-top-left-radius: 40px;
 }
@@ -138,4 +139,26 @@ html{
 
 .menu-grid-item:hover{
     padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .hero{
+        grid-template-columns: minmax(300px, 500px);
+        justify-content: center;
+        text-align: center;
+        grid-auto-rows: 300px;
+
+    }
+    .hero-img{
+        display: none;
+    }
+
+    .dishes-container{
+        margin: 0;
+    }
+
+    .dishes-container-grid{
+        grid-template-columns: repeat(auto-fit, minmax(75px, 130px));
+        gap: 5px;
+    }
 }
